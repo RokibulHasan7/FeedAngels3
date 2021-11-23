@@ -1,24 +1,13 @@
 <!DOCTYPE html>
+{% include "auth/header.html" %}
 {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Feed Angels</title>
+    <title>{% block title %} Home {% endblock %}</title>
 
 </head>
 <body>
-    <main>
-          <div>
-                <ul>
-                  <li href="{% url 'home' %}">Home</>
-                </ul>
-                  <a class="sign-in-btn" href="{% url 'login' %}">Sign In</a>
-          </div>
-
-
-
-
-    </main>
 
 </body>
 </html>
