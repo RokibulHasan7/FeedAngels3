@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+	<link rel="stylesheet" href="{% static 'css/style_signup.css'%}">
+	<link rel="stylesheet" href="{% static 'css/custom.css'%}">
+</head>
+<body>
+<div class="container">
+	<a href="{% url 'home' %}">Home</a> /
+	<a href="{% url 'login' %}">Login</a>
+
+	<div id="login-box">
+		<h2>Sign up</h2>
+	  <div class="left">
+		<form method="post">
+			{% csrf_token %}
+			<input type="text" name="username" maxlength="150" autofocus required id="id_username" placeholder="Username">
+
+			<input type="text" name="full_name" maxlength="100" required id="id_full_name" placeholder="Full Name">
+
+			<input type="number" name="mobileNum" min="0" required id="id_mobileNum" placeholder="Mobile Number">
+
+			<input type="email" name="email" maxlength="254" id="id_email" placeholder="Email">
+
+			<input type="password" name="password1" autocomplete="new-password" required id="id_password1" placeholder="Password">
+			<p class="requirement"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></p>
+
+			<input type="password" name="password2" autocomplete="new-password" required id="id_password2" placeholder="Confirm Password">
+
+			<button type="submit">Sign Up</button>
+		</form>
+	  </div>
+
+	  <div class="right">
+		<span class="loginwith">Sign in with<br />social network</span>
+
+		<button class="social-signin facebook">Log in with facebook</button>
+		<button class="social-signin twitter">Log in with Twitter</button>
+		<button class="social-signin google">Log in with Google+</button>
+	  </div>
+	  <div class="or">OR</div>
+	</div>
+</div>
+</body>
+</html>
+
+

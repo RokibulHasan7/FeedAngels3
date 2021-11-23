@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SignIn</title>
+		<link rel="stylesheet" href="{% static 'css/signin.css'%}">
+		<link rel="stylesheet" href="{% static 'css/custom.css'%}">
+	</head>
+	<body>
+		<div>
+			<a href="{% url 'home' %}">Home</a>/<a href="{% url 'signup' %}">Sign up</a>
+			<div class="login-box">
+				<div class="login-box-content">
+					<h2>Log in or sign up</h2>
+					<form method="post" autocomplete="off">
+						{% csrf_token %}
+						<input type="text" name="username" maxlength="150" required id="id_username">
+						<input type="password" name="password"  required id="id_password">
+						<button type="submit">Login</button>
+					</form>
+					<div>
+						<p>Don't have any account? sign up</p>
+						<a class="si-up-btn" href="{% url 'signup' %}">Sign up</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
