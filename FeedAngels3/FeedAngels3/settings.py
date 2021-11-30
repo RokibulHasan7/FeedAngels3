@@ -77,6 +77,9 @@ WSGI_APPLICATION = 'FeedAngels3.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        },
         'NAME': 'projectdb1.0',
         'USER': 'root',
         'PASSWORD': '',
@@ -137,3 +140,6 @@ AUTH_USER_MODEL = 'part1.CustomUser'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'image')
+MEDIA_URL = '/image/'
