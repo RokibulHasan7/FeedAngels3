@@ -20,6 +20,8 @@ def signup(request):
             return redirect('home')
     else:
         form = SignUpForm()
-    return render(request, 'auth/signup.html', { 'form' : form })
+    return render(request, 'auth/signup.html', {'form': form})
 
 
+def pickup(request):
+    return render(request, 'auth/pickup.html')
