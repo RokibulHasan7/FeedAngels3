@@ -1,7 +1,9 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 
-from .forms import SignUpForm
+from .forms import SignUpForm, VolunteerForm
+from .models import CustomUser, Volunteer
 
 
 def home(request):
@@ -23,3 +25,24 @@ def signup(request):
     return render(request, 'auth/signup.html', { 'form' : form })
 
 
+def volunteer_signup(request, userid):
+    getuser = CustomUser.objects.get(id=userid)
+    if request.method == "GET":
+        return render(request, 'auth/volunteer_signup.html', {'data': getuser})
+    elif request.method == "POST":
+        prod = Volunteer()
+        prod.username = getuser
+        prod.address = request.POST.get('address')
+
+        if len(request.FILES) != 0:
+            prod.image = request.FILES['image']
+
+        prod.save()
+        messages.success(request, "Volunteer Added Successfully")
+        return redirect('/')
+    return render(request, 'auth/volunteer_signup.html')
+
+def VolunteerProfile(request):
+    volunteer = Volunteer.objects.all()
+    context = {'volunteer':volunteer}
+    return render(request, 'auth/VolunteerProfile.html', context)

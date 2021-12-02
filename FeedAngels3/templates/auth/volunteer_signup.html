@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Become Volunteer | {{user.full_name}}</title>
+</head>
+{% if user.is_authenticated %}
+<body>
+      <div class>
+            <h2>Volunteer SignUp</h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              <input type="text" Required name="address" maxlength="200" placeholder="Address">
+              <input type="file" Required name="image">
+              <button type="submit" class="btn btn-primary">Volunteer Sign UP</button>
+            </form>
+    </div>
+</body>
+{% endif %}
+</html>

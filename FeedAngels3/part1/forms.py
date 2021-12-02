@@ -16,4 +16,4 @@ class SignUpForm(UserCreationForm):
 class VolunteerForm(forms.ModelForm):
     class Meta:
         model = Volunteer
-        fields = ['address' , 'img']
+        fields = ['address', 'img']

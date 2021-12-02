@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_createsuperuserwithpassword',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ DATABASES = {
         'OPTIONS': {
             'sql_mode': 'traditional',
         },
-        'NAME': 'projectdb1.0',
+        'NAME': 'feedangels412',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -141,5 +142,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'image')
-MEDIA_URL = '/image/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
