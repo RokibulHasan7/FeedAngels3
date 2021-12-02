@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% include "auth/header.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PickUp Points</title>
+
+    <link rel="stylesheet" href="{% static 'css/custom.css'%}">
+</head>
+<body>
+<!-- first section_area_start -->
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center pickup1 overlay2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <select class="form-control form-control-lg" style="width:150px;">
+                            <option value="1">Dhaka</option>
+                            <option value="2">Khulna</option>
+                            <option value="3">Rajshahi</option>
+                            <option value="4">Sylhet</option>
+                            <option value="5">Rangpur</option>
+                            <option value="6">Chittagong</option>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                        <select class="form-control form-control-lg" style="width:150px;">
+                            <option>Keraniganj</option>
+                            <option>Rampura</option>
+                            <option>Badda</option>
+                            <option>Uttara</option>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                        <a class="btn btn-outline-success" href="#">Find PickUp Point <i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

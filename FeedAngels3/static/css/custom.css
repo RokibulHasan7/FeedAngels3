@@ -7,3 +7,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 }
+
+.pickup1{
+    background-image: url("/static/img/pickup.png");
+}
