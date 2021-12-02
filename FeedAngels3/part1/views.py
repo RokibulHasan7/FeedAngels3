@@ -23,5 +23,3 @@ def signup(request):
     return render(request, 'auth/signup.html', { 'form' : form })
 
 
-def pickup(request):
-    return render(request, 'auth/pickup.html')
