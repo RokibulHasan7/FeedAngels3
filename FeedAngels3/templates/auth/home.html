@@ -27,6 +27,12 @@
                             </p>
                             <a href="About.html" class="boxed-btn3">Learn More
                             </a>
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'VolunteerSignup' user.id %}" class="boxed-btn3">Become Volunteer</a>
+                            <a href="{% url 'VolunteerProfile' user.id %}" class="boxed-btn3">Volunteer Profile</a>
+                            {% endif %}
+
+
                         </div>
                     </div>
                 </div>

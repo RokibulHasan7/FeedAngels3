@@ -31,6 +31,8 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('signup/', views.signup, name='signup'),
     path('pickuppoints/', views.pickup, name='pickup'),
+    path('volunteersignup/<int:userid>', views.volunteerSignUp, name='VolunteerSignup'),
+    path('VolunteerProfile/<int:volunteerId>', views.VolunteerProfile, name='VolunteerProfile'),
 ]
 
 if settings.DEBUG:

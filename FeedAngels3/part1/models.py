@@ -27,4 +27,4 @@ class PickUppoints(models.Model):
     Division = models.CharField(max_length=200)
     District = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
-    img = models.ImageField(upload_to="media")
+    img = models.ImageField(upload_to=filepath)
