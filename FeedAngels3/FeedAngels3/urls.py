@@ -33,6 +33,8 @@ urlpatterns = [
     path('pickuppoints/', views.pickup, name='pickup'),
     path('volunteersignup/<int:userid>', views.volunteerSignUp, name='VolunteerSignup'),
     path('VolunteerProfile/<int:volunteerId>', views.VolunteerProfile, name='VolunteerProfile'),
+    path('userProfile/<int:userid>', views.UserProfile, name='userProfile'),
+    path('changePassword/', views.change_password, name='changePassword'),
 ]
 
 if settings.DEBUG:

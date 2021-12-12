@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile | {{user.full_name}}</title>
+</head>
+<body>
+      <div>
+        <div>{{ user.full_name }} </div>
+        <div>{{ user.mobileNum }} </div>
+        <div>
+            <a data-scroll-nav='1' href="{% url 'changePassword' %}">Change Password</a>
+        </div>
+      </div>
+</body>
+</html>

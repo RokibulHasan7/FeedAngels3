@@ -77,11 +77,24 @@
                                         <li><a href="#">Contact</a></li>
                                     </ul>
                                 </nav>
+                                {% if user.is_authenticated %}
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a data-scroll-nav='1' href="{% url 'userProfile' user.id %}">Profile</a>
+                                    </div>
+                                </div>
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a data-scroll-nav='1' href="{% url 'logout' %}">Logout</a>
+                                    </div>
+                                </div>
+                                {% else %}
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
                                         <a data-scroll-nav='1' href="{% url 'login' %}">Login</a>
                                     </div>
                                 </div>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-12">
