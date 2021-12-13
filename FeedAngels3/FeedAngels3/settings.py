@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_createsuperuserwithpassword',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,16 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads/')
 MEDIA_URL = '/media/'
+
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'feedangels@gmail.com'
+EMAIL_HOST_PASSWORD = 'Feed@ngel$3'
+#DEFAULT_FROM_EMAIL = 'Rokibul Hasan feedangels@gmail.com'
