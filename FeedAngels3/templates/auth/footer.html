@@ -1,19 +1,121 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/custom.css'%}">
+
 
 </head>
 <body>
-      <footer class="text-center text-white" style="background-color: #f1f1f1;">
-      <!-- Copyright -->
-      <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 Copyright | All Right Reserves |
-        <a class="text-dark" href="{% url 'home' %}">Feed Angels</a>
-      </div>
-      <!-- Copyright -->
+    <!-- footer_start  -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img class="img-thumbnail footer" src="{% static 'img/logo1.png' %}" alt="footer logo">
+                                </a>
+                            </div>
+                            <p class="address_text">
+                                It's time to feed hunger. A lot<br>
+                                of people outside craving for food.<br>
+                                FOR HOMELESS, FOOD IS A<br>
+                                BIGGER WORRY THAN CORONAVIRUS.<br>
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Services
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Donate</a></li>
+                                <li><a href="#">Sponsor</a></li>
+                                <li><a href="#">Fundraise</a></li>
+                                <li><a href="#">Volunteer</a></li>
+                                <li><a href="#">Find Food</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Contacts
+                            </h3>
+                            <div class="contacts">
+                                <p>+8801864411806 <br>
+                                    feedangels@gmail.com <br>
+                                    House 12, Blcok J, Banasree
+                                    Rampura, Dhaka-1219
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Top Blogs
+                            </h3>
+                            <ul class="news_links">
+                                <li>
+                                    <div class="info">
+                                        <a href="#">
+                                            <h4>Food Program In Banasree</h4>
+                                        </a>
+                                        <span>Jun 12, 2021</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info">
+                                        <a href="#">
+                                            <h4>Huge Amount Donated A Stranger</h4>
+                                        </a>
+                                        <span>Nov 24, 2019</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright | All Right Reserves |
+            <a class="text-dark" href="{% url 'home' %}">Feed Angels</a>
+        </div>
     </footer>
+
 </body>
 </html>

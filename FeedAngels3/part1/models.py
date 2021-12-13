@@ -11,7 +11,7 @@ def filepath(request, filename):
 
 class CustomUser(AbstractUser):
     full_name = models.CharField(max_length=100, blank=False)
-    mobileNum = models.PositiveIntegerField(null=True, blank=False)
+    mobileNum = models.PositiveIntegerField(null=True, blank=True)
 
 
 class Volunteer(models.Model):

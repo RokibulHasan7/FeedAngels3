@@ -66,8 +66,7 @@ def volunteerSignUp(request, userid):
 
 def VolunteerProfile(request, volunteerId):
     getVolunteer = Volunteer.objects.get(username=volunteerId)
-    volunteer = Volunteer.objects.all()
-    context = {'volunteer': volunteer, 'data': getVolunteer}
+    context = {'data': getVolunteer}
     if request.method == 'GET':
         return render(request, 'auth/volunteerProfile.html', context)
     return render(request, 'auth/volunteerProfile.html')

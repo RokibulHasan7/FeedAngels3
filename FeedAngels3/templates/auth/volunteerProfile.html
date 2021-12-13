@@ -6,15 +6,12 @@
 </head>
 <body>
       <div>
-        {% for v in volunteer %}
-
-        <div>{{ v.address }} </div>
-        {% if v.img %}
-        <div>
-          <img src="{{ v.img.url }}" alt="">
-          </div>
-        {% endif %}
-        {% endfor %}
+          <div>{{ data.address }} </div>
+            {% if data.img %}
+            <div>
+              <img src="{{ data.img.url }}" alt="">
+            </div>
+            {% endif %}
       </div>
 </body>
 </html>

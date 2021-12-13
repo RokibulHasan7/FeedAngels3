@@ -72,26 +72,26 @@
                                         <li><a href="#">home</a></li>
                                         <li><a href="#">Available Food</a></li>
                                         <li><a href="#">blog</li>
-                                        <li><a href="{% url 'pickup' %}">Pickup Points</li>
                                         <li><a href="#">About</li>
                                         <li><a href="#">Contact</a></li>
                                     </ul>
                                 </nav>
                                 {% if user.is_authenticated %}
-                                <div class="Appointment">
-                                    <div class="book_btn d-none d-lg-block">
-                                        <a data-scroll-nav='1' href="{% url 'userProfile' user.id %}">Profile</a>
-                                    </div>
-                                </div>
-                                <div class="Appointment">
-                                    <div class="book_btn d-none d-lg-block">
-                                        <a data-scroll-nav='1' href="{% url 'logout' %}">Logout</a>
-                                    </div>
+                                <div class="btn-group">
+                                  <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user"></i> {{ user.username }}
+                                  </button>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'userProfile' user.id %}">Profile</a>
+                                    <a class="dropdown-item" href="{% url 'VolunteerSignup' user.id %}">Become Volunteer</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                                  </div>
                                 </div>
                                 {% else %}
-                                <div class="Appointment">
+                                <div class="">
                                     <div class="book_btn d-none d-lg-block">
-                                        <a data-scroll-nav='1' href="{% url 'login' %}">Login</a>
+                                        <a class="boxed-btn3" href="{% url 'login' %}">Login</a>
                                     </div>
                                 </div>
                                 {% endif %}
@@ -126,5 +126,7 @@
     <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
     <script src="{% static 'js/plugins.js'%}"></script>
     <script src="{% static 'js/gijgo.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
 </body>
 </html>

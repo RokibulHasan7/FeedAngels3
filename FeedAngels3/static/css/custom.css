@@ -11,3 +11,9 @@ body {
 .pickup1{
     background-image: url("/static/img/pickup.png");
 }
+
+.img-thumbnail.footer {
+    max-width: 80%;
+    height: auto;
+	margin-left: -1rem;
+}
