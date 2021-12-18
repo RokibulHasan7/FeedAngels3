@@ -27,6 +27,12 @@ class PickUppoints(models.Model):
     Division = models.CharField(max_length=200)
     District = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
-    img = models.ImageField(upload_to=filepath)
+    img = models.ImageField(upload_to=filepath, null=True, blank=True)
 
 
+class userImg(models.Model):
+    userId = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True,)
+    img = models.ImageField(upload_to=filepath, null=True, blank=True)
+
+    def __str__(self):
+        return '%s' % self.userId

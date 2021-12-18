@@ -1,10 +1,11 @@
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.models import User
 from django.template.loader import render_to_string
@@ -20,7 +21,11 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 def home(request):
-    return render(request, 'auth/home.html')
+    volunteer = Volunteer.objects.all()
+    context = {'data': volunteer}
+    #if request.method == 'GET':
+        #return render(request, 'auth/volunteerProfile.html', context)
+    return render(request, 'auth/home.html', context)
 
 
 def signup(request):
@@ -124,3 +129,16 @@ def password_reset_request(request):
                     return redirect("password_reset_done")
     password_reset_form = PasswordResetForm()
     return render(request=request, template_name="auth/password/password_reset.html", context={"password_reset_form":password_reset_form})
+
+
+
+def editProfile(request):
+    if request.POST:
+        user = User.objects.get(pk=request.user.id)
+        user.full_name = request.POST.get('full_name')
+        user.email = request.POST.get('email')
+        user.mobileNum = request.POST.get('mobileNum')
+        user.save()
+    return render(request, 'auth/editProfile.html')
+
+

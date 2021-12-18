@@ -82,7 +82,7 @@ DATABASES = {
         'OPTIONS': {
             'sql_mode': 'traditional',
         },
-        'NAME': 'feedangels412',
+        'NAME': 'feedangels412.2',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
