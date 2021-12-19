@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Result</title>
+</head>
+<body>
+      <ul>
+          {% for point in object_list %}
+         <li>
+            {{ point.address }}
+             {% if point.img %}
+            <div>
+              <img src="{{ point.img.url }}" alt="">
+            </div>
+            {% endif %}
+         </li>
+          {% endfor %}
+      </ul>
+</body>
+</html>

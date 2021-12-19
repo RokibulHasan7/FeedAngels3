@@ -13,9 +13,12 @@ from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
+from django.views import generic
+from django.views.generic import ListView
+from django.db.models import Q
 
 from .forms import SignUpForm
-from .models import CustomUser, Volunteer
+from .models import CustomUser, Volunteer, PickUppoints
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -45,6 +48,14 @@ def signup(request):
 
 def pickup(request):
     return render(request, 'auth/pickup.html')
+
+class pickupPointSearchResult(generic.ListView):
+   model = PickUppoints
+   template_name = 'auth/pickupPointSearchResult.html'
+   def get_queryset(self):
+       query = self.request.GET.get('q')
+       object_list = PickUppoints.objects.filter(Q(District__icontains=query))
+       return object_list
 
 
 def volunteerSignUp(request, userid):
