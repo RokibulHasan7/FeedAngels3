@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% include "auth/header.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donate Money</title>
+</head>
+<body>
+    <h2 class="header2">Donate Money</h2>
+    {% if error %}
+    <h3>{{ error }}</h3>
+    {% endif %}
+    <form class="grp" method="post">
+        <div class="col-xs-1" align="center">
+        {% csrf_token %}
+        <label for="username">Username: </label>
+        <input type="text" name="username" required>
+        <label for="password">Password: </label>
+        <input type="password" name="password" required>
+        <label for="amount">Amount: </label>
+        <input type="number" name="amount" value="" >
+        <input type="submit" name="submit" value="Submit" class="btn btn-success" required>
+        </div>
+    </form>
+
+
+<style type="text/css">
+
+.grp{margin-top:100px;
+margin-bottom: 100px;}
+.header2{margin-top: 70px;
+text-align: center;}
+
+</style>
+</body>
+{% include "auth/footer.html" %}
+</html>
