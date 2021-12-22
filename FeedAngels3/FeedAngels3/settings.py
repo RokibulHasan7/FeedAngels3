@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_createsuperuserwithpassword',
     'crispy_forms',
+    'donation',
 ]
 
 MIDDLEWARE = [
@@ -158,3 +159,10 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'feedangels@gmail.com'
 EMAIL_HOST_PASSWORD = 'Feed@ngel$3'
 #DEFAULT_FROM_EMAIL = 'Rokibul Hasan feedangels@gmail.com'
+
+PAYTM_MERCHANT_ID = 'DIY12386817555501617'
+PAYTM_SECRET_KEY = 'bKMfNxPPf_QdZppa'
+PAYTM_WEBSITE = 'WEBSTAGING'
+PAYTM_CHANNEL_ID = 'WEB'
+PAYTM_INDUSTRY_TYPE_ID = 'Retail'
+

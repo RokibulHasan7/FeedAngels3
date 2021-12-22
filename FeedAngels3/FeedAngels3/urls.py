@@ -1,4 +1,4 @@
-"""HomeAway URL Configuration
+"""Feed Angels URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_views
 from django.contrib import admin
 
 from part1 import views
+#from donation import views
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -42,6 +43,7 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='auth/password/password_reset_complete.html'), name='password_reset_complete'),
     path('editProfile/', views.editProfile, name='editProfile'),
     path('pickupPointSearchResult/', views.pickupPointSearchResult.as_view(), name='pickupPointSearchResult'),
+    path('', include('donation.urls'))
 
 ]
 

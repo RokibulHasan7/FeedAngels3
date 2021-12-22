@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% include "auth/header.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make A Donation</title>
+</head>
+<body>
+      <div>
+      <a href="{% url 'donateMoney' %}" class="boxed-btn4">Donate Money</a>
+      </div>
+      <div>
+      <a href="#" class="boxed-btn4">Donate Food</a>
+      </div>
+
+<style type="text/css">
+
+body{margin-top:200px;}
+.boxed-btn4{
+margin-top:200px;
+margin-left:200px;}
+
+</style>
+</body>
+{% include "auth/footer.html" %}
+</html>
