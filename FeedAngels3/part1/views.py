@@ -49,6 +49,7 @@ def signup(request):
 def pickup(request):
     return render(request, 'auth/pickup.html')
 
+
 class pickupPointSearchResult(generic.ListView):
    model = PickUppoints
    template_name = 'auth/pickupPointSearchResult.html'
@@ -74,6 +75,7 @@ def volunteerSignUp(request, userid):
 
             volunteer.save()
             messages.success(request, "Registered Successfully")
+            return redirect('home')
         except Exception as e:
             messages.success(request, "Failed to Register Try Again")
             return redirect('/')

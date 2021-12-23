@@ -9,11 +9,43 @@ body {
 }
 
 .pickup1{
-    background-image: url("/static/img/pickup.png");
+    background-image: url("/static/img/pickup1.jpg");
 }
 
 .img-thumbnail.footer {
     max-width: 80%;
     height: auto;
 	margin-left: -1rem;
+}
+
+.overlay-pickup {
+  position: relative;
+  z-index: -1;
+}
+
+.overlay-pickup::before {
+  position: absolute;
+  content: "";
+  background-color: #000C;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.38;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.container.padding{
+    padding: 200px;
+}
+
+.text-center {
+    color: white ;
+	z-index: 1;
+	padding: 0 10rem 0 13rem;
+}
+.row.select{
+    text-align: center;
 }

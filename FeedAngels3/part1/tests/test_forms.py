@@ -44,6 +44,7 @@ class TestSignUpForm(TestCase):
         form.save()
         self.assertEqual(CustomUser.objects.count(), 1)
 
+
 class TestVolunteerForm(TestCase):
     def test_empty_form(self):
         form = VolunteerForm()

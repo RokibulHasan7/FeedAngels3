@@ -1,21 +1,46 @@
 <!DOCTYPE html>
+{% include "auth/header.html" %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Search Result</title>
+    <link href="{% static 'css/pickup_result.css'%}" rel="stylesheet" />
 </head>
 <body>
-      <ul>
-          {% for point in object_list %}
-         <li>
-            {{ point.address }}
-             {% if point.img %}
-            <div>
-              <img src="{{ point.img.url }}" alt="">
+    <section class="details-card mt-0">
+        <div class="container mb-4">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h1 class="search">Search Results</h1>
+                </div>
+                <div class="col-md-4"></div>
             </div>
-            {% endif %}
-         </li>
-          {% endfor %}
-      </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% for point in object_list %}
+                <div class="col-md-4 mb-4">
+                    <div class="card-content">
+                        <div class="card-img">
+                            {% if point.img %}
+                            <img src="{{ point.img.url }}" alt="Cover Image">
+                            {% endif %}
+                        </div>
+                        <div class="card-desc">
+                            <h2><p class="small mb-1"> <i class="fa fa-map-marker" aria-hidden="true"></i> {{ point.address }}</p></h2>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">District: {{ point.District }}</li>
+                            <li class="list-group-item">Division: {{ point.Division }}</li>
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 </body>
+{% include "auth/footer.html" %}
 </html>
