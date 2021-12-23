@@ -79,7 +79,6 @@ img{
 }
 
 @media only screen and (max-width: 810px) {
-
     img{
         border-top-right-radius: 20px;
         border-bottom-left-radius: 0px;
