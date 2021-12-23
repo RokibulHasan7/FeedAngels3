@@ -18,6 +18,16 @@ Project name is **Feed Angels**. The is a online food and money donation web app
 * Volunteer can find available food for donation and collect them.
 * They will update the information of the quality of food and serve in organizational work.
 
+## Technologies
+
+* Programming languages — Python, JavaScript.
+* Application Framework — Django. 
+* Database — MySQL.
+* Structure Web Page language — HTML.
+* Web Page Design language — CSS.
+* Other frameworks — Bootstrap for CSS and other JS framework.
+* Version Control System — Git.
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
