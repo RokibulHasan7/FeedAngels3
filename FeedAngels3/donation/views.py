@@ -1,10 +1,35 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
-from .models import donateMoney
+from .models import donateMoney, donateFood
 from .paytm import generate_checksum, verify_checksum
 from part1.models import CustomUser
+#from .forms import donateFoodForm
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+
+def donateFoodView(request, userid):
+    user = CustomUser.objects.get(id=userid)
+    if request.method == "GET":
+        return render(request, 'auth/donateFood.html', {'data': user})
+    elif request.method == "POST":
+        try:
+            district = request.POST['district']
+            address = request.POST['address']
+            description = request.POST['description']
+            expiration_date = request.POST['expiration_date']
+            donate_food = donateFood.objects.create(made_by=user, district=district, address=address,
+                                                    description=description,
+                                                    expiration_date=expiration_date, is_approved=0)
+            donate_food.save()
+            return redirect('home')
+        except:
+            messages.success(request, "Failed to Donate! Try Again...")
+            return redirect('/')
 
 
 def initiate_payment(request):
@@ -80,5 +105,46 @@ def callback(request):
 def donation(request):
     return render(request, 'auth/donation.html')
 
-def donateFood(request):
-    return render(request, 'auth/donationFood.html')
+
+""""
+def donateFood(request, userid):
+    user = CustomUser.objects.get(id=userid)
+    if request.method == 'GET':
+        return render(request, 'auth/donateFood.html', {'data': user})
+    elif request.method == 'POST':
+        try:
+            donate_food = donateFood()
+            donate_food.made_by = user
+            donate_food.district = request.POST.get('district')
+            donate_food.address = request.POST.get('address')
+            donate_food.description = request.POST.get('description')
+            donate_food.expiration_date = request.POST.get('expiration_date')
+            donate_food.is_approved = 0
+            donate_food.save()
+            messages.success(request, "Donation done!")
+            return redirect('home')
+        except Exception as e:
+            messages.success(request, "Failed to Donate! Try Again...")
+            return redirect('/')
+    return render(request, 'auth/donateFood.html')
+
+
+
+def donateFood(request, userid):
+    user = CustomUser.objects.get(id=userid)
+    if request.method == "GET":
+        return render(request, 'auth/donateFood.html', {'data': user})
+    try:
+        district = request.POST['district']
+        address = request.POST['address']
+        description = request.POST['description']
+        expiration_date = request.POST['expiration_date']
+        donate_food = donateFood.objects.create(made_by=user, district=district, address=address,
+                                                description=description,
+                                                expiration_date=expiration_date)
+        donate_food.save()
+        return redirect('home')
+    except:
+        messages.success(request, "Failed to Donate! Try Again...")
+        return redirect('/')
+"""

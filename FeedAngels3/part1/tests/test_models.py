@@ -63,7 +63,7 @@ class PickUppointsModelTest(TestCase):
         self.assertIsInstance(self.point.Division, str)
         self.assertIsInstance(self.point.District, str)
         self.assertIsInstance(self.point.address, str)
-        # self.assertIsInstance(self.point.img, type(PickUppoints))
+        #self.assertIsInstance(self.point.img, type(PickUppoints))
 
     def test_add_pickUpPoints(self):
         self.assertEqual(PickUppoints.objects.count(), 1)

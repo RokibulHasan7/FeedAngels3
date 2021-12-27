@@ -15,3 +15,14 @@ class donateMoney(models.Model):
             self.order_id = self.made_on.strftime('PAY2ME%Y%m%dODR') + str(self.id)
         return super().save(*args, **kwargs)
 
+
+class donateFood(models.Model):
+    made_by = models.ForeignKey(CustomUser, related_name='donateFood', on_delete=models.CASCADE)
+    description = models.CharField(max_length=255, null=True, blank=True)
+    expiration_date = models.DateField(null=True)
+    address = models.CharField(max_length=255, null=True, blank=True)
+    district = models.CharField(max_length=255, null=True, blank=True)
+    is_approved = models.BooleanField(null=True, blank=True)
+
+    def __str__(self):
+        return '%s' % self.made_by
