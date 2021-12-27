@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_createsuperuserwithpassword',
     'crispy_forms',
     'donation',
+    'contact',
 ]
 
 MIDDLEWARE = [
