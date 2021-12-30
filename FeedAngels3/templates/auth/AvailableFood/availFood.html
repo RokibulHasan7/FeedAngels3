@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% include "auth/header.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Food</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            {% for f in food %}
+                {% if f.is_approved == 1 %}
+                    <div class="col">
+                        <h1>{{ f.address}}</h1>
+                        <h3>{{ f.district }}</h3>
+                        <p>{{ f.description }}</p>
+                        <h4>Available till: {{ f.expiration_date }}</h4>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% include "auth/footer.html" %}
+</html>

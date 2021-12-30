@@ -46,6 +46,7 @@ urlpatterns = [
     path('pickupPointSearchResult/', views.pickupPointSearchResult.as_view(), name='pickupPointSearchResult'),
     path('', include('donation.urls')),
     path('', include('contact.urls')),
+    path('', include('availableFood.urls')),
 
 ]
 

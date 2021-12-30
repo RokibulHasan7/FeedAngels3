@@ -33,19 +33,20 @@ body {
   height: 100%;
   z-index: 0;
   opacity: 0.38;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
 }
 
 .container.padding{
     padding: 200px;
 }
 
-.text-center {
+.text-center.pickup {
     color: white ;
 	z-index: 1;
 	padding: 0 10rem 0 13rem;
 }
 .row.select{
     text-align: center;
+}
+.row.select.my-3{
+    z-index: 1;
 }

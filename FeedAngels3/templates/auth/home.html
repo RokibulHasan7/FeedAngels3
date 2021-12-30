@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="help_content">
-                            <h4>Blood Camp</h4>
+                            <h4>Serving Food</h4>
                             <p>Lorem ipsum, or lipsum as it is
                                 sometimes known, is dummy
                                 text used in laying out print.</p>
@@ -260,7 +260,7 @@
                                 <i class="flaticon-calendar"></i>
                             </div>
                             <div class="events">
-                                <h3 class="counter">120</h3>
+                                <h3 class="counter">12</h3>
                                 <p>Finished Event</p>
                             </div>
                         </div>
@@ -271,7 +271,7 @@
                                 <i class="flaticon-heart-beat"></i>
                             </div>
                             <div class="events">
-                                <h3 class="counter">120</h3>
+                                <h3 class="counter">10</h3>
                                 <p>Finished Event</p>
                             </div>
                         </div>
@@ -282,7 +282,7 @@
                                 <i class="flaticon-in-love"></i>
                             </div>
                             <div class="events">
-                                <h3 class="counter">120</h3>
+                                <h3 class="counter">11</h3>
                                 <p>Finished Event</p>
                             </div>
                         </div>
@@ -293,7 +293,7 @@
                                 <i class="flaticon-hug"></i>
                             </div>
                             <div class="events">
-                                <h3 class="counter">120</h3>
+                                <h3 class="counter">13</h3>
                                 <p>Finished Event</p>
                             </div>
                         </div>
@@ -402,6 +402,11 @@
                         </div>
                     </div>
                 </div>
+                {% if user.is_authenticated %}
+                <a href="{% url 'VolunteerSignup' user.id %}"  class="boxed-btn4 mt-5">Join as a Volunteer</a>
+                {% else %}
+                <a href="{% url 'login' %}"  class="boxed-btn4 mt-5">Join as a Volunteer</a>
+                {% endif %}
             </div>
         </div>
     </div>
