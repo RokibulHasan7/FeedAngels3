@@ -50,3 +50,12 @@ body {
 .row.select.my-3{
     z-index: 1;
 }
+.donation-img {
+  min-height:100%;
+  background:linear-gradient(0deg, rgba(60, 199, 143, 0.5), rgba(60, 199, 143, 0.5)), url("/static/img/donation1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #3CC78FB5;
+
+}

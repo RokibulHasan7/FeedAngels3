@@ -8,11 +8,16 @@
 </head>
 <body>
 <div class="container">
-  <div class="row">
+  <div class="row mt-5 ">
     <div class="col-md-8 card mb-4  mt-5 left  top">
       <div class="card-body">
         <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
         <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
+        <div class="card-img">
+          {% if post.imgage %}
+          <img src="{{ post.imgage.url }}" alt="Cover Image" style="width: 100%;">
+          {% endif %}
+        </div>
         <p class="card-text ">{{ object.content | safe }}</p>
       </div>
     </div>
