@@ -21,13 +21,15 @@ from .forms import SignUpForm
 from .models import CustomUser, Volunteer, PickUppoints
 
 from django.contrib.auth import get_user_model
+
 User = get_user_model()
+
 
 def home(request):
     volunteer = Volunteer.objects.all()
     context = {'data': volunteer}
-    #if request.method == 'GET':
-        #return render(request, 'auth/volunteerProfile.html', context)
+    # if request.method == 'GET':
+    # return render(request, 'auth/volunteerProfile.html', context)
     return render(request, 'auth/home.html', context)
 
 
@@ -51,12 +53,13 @@ def pickup(request):
 
 
 class pickupPointSearchResult(generic.ListView):
-   model = PickUppoints
-   template_name = 'auth/pickupPointSearchResult.html'
-   def get_queryset(self):
-       query = self.request.GET.get('q')
-       object_list = PickUppoints.objects.filter(Q(District__icontains=query))
-       return object_list
+    model = PickUppoints
+    template_name = 'auth/pickupPointSearchResult.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = PickUppoints.objects.filter(Q(District__icontains=query))
+        return object_list
 
 
 def volunteerSignUp(request, userid):
@@ -88,7 +91,6 @@ def VolunteerProfile(request, volunteerId):
     if request.method == 'GET':
         return render(request, 'auth/volunteerProfile.html', context)
     return render(request, 'auth/volunteerProfile.html')
-
 
 
 def UserProfile(request, userid):
@@ -126,23 +128,23 @@ def password_reset_request(request):
                     subject = "Password Reset Requested"
                     email_template_name = "auth/password/password_reset_email.txt"
                     c = {
-                    "email":user.email,
-                    'domain':'127.0.0.1:8000',
-                    'site_name': 'Feed Angels',
-                    "uid": urlsafe_base64_encode(force_bytes(user.pk)),
-                    "user": user,
-                    'token': default_token_generator.make_token(user),
-                    'protocol': 'http',
+                        "email": user.email,
+                        'domain': '127.0.0.1:8000',
+                        'site_name': 'Feed Angels',
+                        "uid": urlsafe_base64_encode(force_bytes(user.pk)),
+                        "user": user,
+                        'token': default_token_generator.make_token(user),
+                        'protocol': 'http',
                     }
                     email = render_to_string(email_template_name, c)
                     try:
-                        send_mail(subject, email, 'admin@example.com' , [user.email], fail_silently=False)
+                        send_mail(subject, email, 'admin@example.com', [user.email], fail_silently=False)
                     except BadHeaderError:
                         return HttpResponse('Invalid header found.')
                     return redirect("password_reset_done")
     password_reset_form = PasswordResetForm()
-    return render(request=request, template_name="auth/password/password_reset.html", context={"password_reset_form":password_reset_form})
-
+    return render(request=request, template_name="auth/password/password_reset.html",
+                  context={"password_reset_form": password_reset_form})
 
 
 def editProfile(request):
@@ -155,5 +157,12 @@ def editProfile(request):
     return render(request, 'auth/editProfile.html')
 
 
-def test(request):
-    return render(request, 'auth/test.html')
+def aboutUs(request):
+    return render(request, 'auth/aboutUs.html')
+
+
+# def addpost(request, userid):
+#     getUser = CustomUser.objects.get(id=userid)
+#     if request.method == 'GET':
+#         return render(request, 'auth/add_post.html', {'user': getUser})
+#     return render(request, 'auth\add_post.html')

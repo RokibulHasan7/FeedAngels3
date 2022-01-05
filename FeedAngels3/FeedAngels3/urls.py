@@ -31,7 +31,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='auth/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('signup/', views.signup, name='signup'),
-    path('test/', views.test, name='test'),
+    path('aboutUs/', views.aboutUs, name='aboutUs'),
     path('pickuppoints/', views.pickup, name='pickup'),
     path('volunteersignup/<int:userid>', views.volunteerSignUp, name='VolunteerSignup'),
     path('VolunteerProfile/<int:volunteerId>', views.VolunteerProfile, name='VolunteerProfile'),
@@ -44,9 +44,11 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='auth/password/password_reset_complete.html'), name='password_reset_complete'),
     path('editProfile/', views.editProfile, name='editProfile'),
     path('pickupPointSearchResult/', views.pickupPointSearchResult.as_view(), name='pickupPointSearchResult'),
+    #path('add_post/<int:userid>', views.addpost(), name='add_post'),
     path('', include('donation.urls')),
     path('', include('contact.urls')),
     path('', include('availableFood.urls')),
+    path('', include('blog.urls')),
 
 ]
 
