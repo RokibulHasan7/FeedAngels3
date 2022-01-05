@@ -22,6 +22,8 @@ from .models import CustomUser, Volunteer, PickUppoints
 
 from django.contrib.auth import get_user_model
 
+from blog.forms import PostForm
+
 User = get_user_model()
 
 
@@ -161,8 +163,3 @@ def aboutUs(request):
     return render(request, 'auth/aboutUs.html')
 
 
-# def addpost(request, userid):
-#     getUser = CustomUser.objects.get(id=userid)
-#     if request.method == 'GET':
-#         return render(request, 'auth/add_post.html', {'user': getUser})
-#     return render(request, 'auth\add_post.html')

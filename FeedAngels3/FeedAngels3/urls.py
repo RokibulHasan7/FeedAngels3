@@ -44,7 +44,6 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='auth/password/password_reset_complete.html'), name='password_reset_complete'),
     path('editProfile/', views.editProfile, name='editProfile'),
     path('pickupPointSearchResult/', views.pickupPointSearchResult.as_view(), name='pickupPointSearchResult'),
-    #path('add_post/<int:userid>', views.addpost(), name='add_post'),
     path('', include('donation.urls')),
     path('', include('contact.urls')),
     path('', include('availableFood.urls')),

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Blog</title>
+    <link rel="stylesheet" href="{% static 'css/style_signup.css'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+</head>
+<body>
+		<section class="Form my-5 mx-5">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-lg-8 h-auto px-5 py-5">
+						<form method="POST" autocomplete="off">
+							{% csrf_token %}
+							{{form.as_p}}
+							<!--<div class="form-row">
+								<div class="col-lg-8">
+									<input class="form-control my-3 px-3" type="text" name="tittle" maxlength="150" autofocus required placeholder="Post Tittle">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col-lg-8">
+									<input class="form-control my-3 px-3" type="file" name="img"  placeholder="Upload image">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col-lg-8">
+									<textarea class="form-control my-3 px-3" type="text" name="content"  required  placeholder="Tell your story"></textarea>
+
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col-lg-8">
+									<div class="form-group">
+										<label for="status">Status</label>
+										<select class="form-control" id="status" name="status">
+										  <option value="0">Draft</option>
+										  <option value="1">Publish</option>
+										</select>
+									</div>
+								</div>
+							</div>-->
+							<div class="form-row">
+								<div class="col-lg-8">
+									<button type="submit" class="boxed-btn3">Post</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+</body>
+</html>
