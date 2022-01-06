@@ -19,6 +19,8 @@ from django.db.models import Q
 
 from .forms import SignUpForm
 from .models import CustomUser, Volunteer, PickUppoints
+from donation.models import donateMoney, donateFood
+
 
 from django.contrib.auth import get_user_model
 
@@ -97,8 +99,11 @@ def VolunteerProfile(request, volunteerId):
 
 def UserProfile(request, userid):
     getUser = CustomUser.objects.get(id=userid)
+    donateHistory1 = donateMoney.objects.all()
+    donateHistory2 = donateFood.objects.all()
+    context = {'getUser': getUser, 'donateHistory1': donateHistory1, 'donateHistory2': donateHistory2}
     if request.method == 'GET':
-        return render(request, 'auth/UserProfile.html', {'data': getUser})
+        return render(request, 'auth/UserProfile.html', context)
     return render(request, 'auth/UserProfile.html')
 
 

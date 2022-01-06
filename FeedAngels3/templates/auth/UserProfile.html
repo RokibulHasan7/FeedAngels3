@@ -23,10 +23,10 @@
                         <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive" alt="">
                     </div>
                   <div class="profile-usertitle">
-                <div class="profile-usertitle-name"> {{ data.full_name }} </div>
-                <div class="profile-usertitle-job"> {{ data.email }}  </div>
-                <div class="profile-usertitle-others">Mobile No : {{ data.mobileNum }} </div>
-                <div class="profile-usertitle-others">Join Date : {{ data.date_joined }} </div>
+                <div class="profile-usertitle-name"> {{ getUser.full_name }} </div>
+                <div class="profile-usertitle-job">Email : {{ getUser.email }}  </div>
+                <div class="profile-usertitle-others">Mobile No : 0{{ getUser.mobileNum }} </div>
+                <div class="profile-usertitle-others">Join Date : {{ getUser.date_joined | date:"F d Y"}} </div>
             </div>
             <div class="profile-userbuttons">
                 <a href="{% url 'editProfile' %}" class="btn btn-info  btn-sm">Edit Profile</a>
@@ -64,6 +64,32 @@
             </div>
             <div class="portlet-body">
                 <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Donation Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for dH1 in donateHistory1 %}
+                    {% if dH1.made_by_id == getUser.id %}
+                    <tr class="success">
+                            <td>{{ dH1.made_on | date:"F d Y"}}</td>
+                            <td>{{ dH1.amount }} Taka only. </td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+                {% for dH2 in donateHistory2 %}
+                {% if dH2.made_by_id == getUser.id %}
+                    <tr class="danger">
+                            <td>{{ dH2.expiration_date | date:"F d Y"}}</td>
+                            <td>{{ dH2.description }}</td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+                    </tbody>
+                    </table>
+                <!--<table class="table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -128,7 +154,7 @@
                             <td>Column content</td>
                         </tr>
                     </tbody>
-                </table>
+                </table>-->
             </div>
         </div>
     </div>

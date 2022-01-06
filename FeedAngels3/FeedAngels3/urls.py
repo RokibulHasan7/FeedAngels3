@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_views
 from django.contrib import admin
 
 from part1 import views
+#from blog import views
 #from donation import views
 
 from django.conf import settings
