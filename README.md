@@ -13,10 +13,19 @@ Project name is **Feed Angels**. The is a online food and money donation web app
 * User can create account in the system.
 * They can update all information about the available food for donation.
 * They can also donate financial aid via card or online payment system.
+* They can donate food.
 * User can also create account as Volunteer.
 * User can get 24 hours support from system.
 * Volunteer can find available food for donation and collect them.
 * They will update the information of the quality of food and serve in organizational work.
+* User can add Blog.
+* User can see his donation history.
+* User can search pick up points by district.
+* User can Change and Reset his password.
+* They can contact through "contact us" feature.
+* User can see the Available food.
+* User can see our recent work video from home page.
+
 
 ## Technologies
 
