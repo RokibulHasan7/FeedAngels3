@@ -6,7 +6,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/RokibulHasan7/FeedAngels3?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/rokibulhasan114?style=social)
 
-Project name is **Feed Angels**. The is a online food and money donation web application. Where people or organizations can donate their extra food to our system and make money donation via card or banking system and disadvantaged people can collect food from our pick up point. User also can be Volunteer to serve the food, collect money and join in our other organizational works.
+Project name is **Feed Angels**. This is a online food and money donation web application. Where people or organizations can donate their extra food to our system and make money donation via card or banking system and disadvantaged people can collect food from our pick up point. User also can be Volunteer to serve the food, collect money and join in our other organizational works.
 
 
 ## Functionality
